@@ -9,10 +9,34 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
-    <div class="container">
+    <div id="app"class="container">
         <div class="title">
             <h1>Typing Game</h1>
+            <div class="marker"></div>
         </div>
+        <button v-if="startFlg!=true" class="startButton mb-20" @click="gameStart">START</button>
+        <div class="question mb-20">apple</div>
+        <div class="clear">Clear</div>
+        <div class="typeFormWrapper mb-20">
+            <input type="text" class="typeForm">
+        </div>
+        <div class="gaugeWrapper mb-20">
+            <div class="gauge"></div>
+        </div>
+        <div>1/5</div>
     </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data: {
+                startFlg:""
+            },
+            methods:{
+                gameStart:function(){
+                    this.startFlg = true;
+                }
+            }
+        })
+    </script>
 </body>
 </html>
